@@ -1,42 +1,82 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <span> API </span>
+    <div class="btns" v-for="(item, index) in buttons" :key="index">
+      <Button v-bind:title="item.name" :method="item.func" v-bind:key="index" />
+    </div>
   </div>
 </template>
 
-<style></style>
-
+<style lang="scss" scoped>
+.home {
+  padding-top: 10vh;
+  margin: auto;
+  background-color: green;
+  height: 100%;
+}
+.btns {
+  margin-top: 3vh;
+}
+</style>
 <script lang="ts">
 import Vue from "vue";
+import Button from "@/components/Button";
 export default Vue.extend({
   name: "Api",
-  components: {},
+  components: {
+    Button,
+  },
   methods: {
     onClickBottomBtn(event: any) {
-      /*       window.history.length > 1 ? this.$router.go(-1) : this.$router.push("/");
-       */
-
-      let targetId = event.currentTarget.id;
-      if (this.index != targetId) {
-        this.index = targetId;
-        console.log(this.index);
-        this.$router.push(this.tabs[this.index].route);
-      }
+      console.log("ola");
+    },
+    con() {
+      console.log("hele");
     },
   },
   data: () => ({
-    value: 0,
-    index: 0,
-    tabs: [
+    location: null,
+    buttons: [
       {
-        route: "/cpu",
+        name: "Camera",
+        func: () => {
+          console.log("ola");
+        },
       },
       {
-        route: "/server",
+        name: "Gallery",
+        func: () => {
+          console.log("ola");
+        },
       },
       {
-        route: "/api",
+        name: "GPS",
+        func: () => {
+          if (!("geolocation" in navigator)) {
+            console.log("Geolocation is not available.");
+            return;
+          }
+          // get position
+          navigator.geolocation.getCurrentPosition(
+            (pos) => {
+              console.log(pos);
+            },
+            (err) => {
+              console.log(err.message);
+            }
+          );
+        },
+      },
+      {
+        name: "Calendar",
+        func: () => {
+          console.log("ola");
+        },
+      },
+      {
+        name: "Contacts",
+        func: () => {
+          console.log("ola");
+        },
       },
     ],
   }),

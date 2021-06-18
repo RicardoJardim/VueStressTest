@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Button from "@/components/Button";
+import Button from "../components/Button.vue";
 
 export default Vue.extend({
   name: "Cpu",
@@ -30,7 +30,7 @@ export default Vue.extend({
     Button,
   },
   methods: {
-    onClickBottomBtn(event: any) {
+    onClickBottomBtn() {
       console.log("ola");
       this.value = 0;
 

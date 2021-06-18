@@ -1,7 +1,7 @@
 <template>
   <v-app style="height: 100vh; overflow: hidden">
     <v-main>
-      <div style="overflow: auto; height: 94vh">
+      <div style="overflow: auto; height: 92vh">
         <router-view></router-view>
       </div>
 
@@ -10,24 +10,22 @@
         color="white"
         background-color="#0099ff"
         grow
-        height="6vh"
       >
         <v-btn id="0" v-on:click="onClickBottomBtn(0, $event)">
-          <span>btn1</span>
+          <span class="sizeText">btn1</span>
 
-          <v-icon>mdi-sword-cross</v-icon>
+          <v-icon class="padding">mdi-sword-cross</v-icon>
         </v-btn>
 
         <v-btn id="1" v-on:click="onClickBottomBtn(1, $event)">
-          <span>btn2</span>
-
-          <v-icon>mdi-cube-outline</v-icon>
+          <span class="sizeText">btn2</span>
+          <v-icon class="padding">mdi-cube-outline</v-icon>
         </v-btn>
 
         <v-btn id="2" v-on:click="onClickBottomBtn(2, $event)">
-          <span>btn3</span>
+          <span class="sizeText">btn3</span>
 
-          <v-icon>mdi-cellphone</v-icon>
+          <v-icon class="padding">mdi-cellphone</v-icon>
         </v-btn>
       </v-bottom-navigation>
     </v-main>
@@ -43,7 +41,13 @@
   opacity: 0 !important;
 }
 .v-btn:not(.v-btn--round).v-size--default {
-  height: 6vh !important;
+  height: 7vh !important;
+}
+.sizeText {
+  font-size: 14px;
+}
+.padding {
+  padding: 5px;
 }
 </style>
 

@@ -3,13 +3,13 @@
     <div id="show">
       <div
         class="views"
-        style="background-color: blue"
+        style="background-color: green"
         v-for="(item, index) in views"
         :key="index"
       ></div>
       <button
         class="views"
-        style="background-color: green"
+        style="background-color: yellow"
         v-for="(item, index) in buttons"
         :key="index"
       >
@@ -61,13 +61,13 @@
 </style>
 <script lang="ts">
 import Vue from "vue";
-import Button from "@/components/Button";
+import Button from "../components/Button.vue";
 
 export default Vue.extend({
   name: "ServerData",
   components: { Button },
   methods: {
-    onClickBottomBtn(event: any) {
+    onClickBottomBtn() {
       console.log(new Date());
 
       this.axios

@@ -19,14 +19,14 @@
 </style>
 <script lang="ts">
 import Vue from "vue";
-import Button from "@/components/Button";
+import Button from "../components/Button.vue";
 export default Vue.extend({
   name: "Api",
   components: {
     Button,
   },
   methods: {
-    onClickBottomBtn(event: any) {
+    onClickBottomBtn() {
       console.log("ola");
     },
     con() {

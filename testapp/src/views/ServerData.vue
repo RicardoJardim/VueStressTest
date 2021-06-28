@@ -71,13 +71,13 @@ export default Vue.extend({
       console.log(new Date());
 
       this.axios
-        .get("https://random-data-api.com/api/users/random_user?size=100")
+        .get("http://192.168.1.112:3000/users?size=100")
         .then((response) => {
           console.log(response.data);
           console.log(new Date());
         });
       this.axios
-        .get("https://random-data-api.com/api/bank/random_bank?size=100")
+        .get("http://192.168.1.112:3000/banks?size=100")
         .then((response) => {
           console.log(response.data);
           console.log(new Date());

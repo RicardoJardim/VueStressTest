@@ -84,10 +84,10 @@ export default Vue.extend({
         });
     },
     onCreateViews() {
-      this.views = 1000;
+      this.views = 500;
     },
     onCreateBtns() {
-      this.buttons = 1000;
+      this.buttons = 500;
     },
   },
   data: () => ({
